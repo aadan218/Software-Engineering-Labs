@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane prefHeight="260.0" prefWidth="360.0"
+           xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.openjfx.lab2.controller.WelcomeController">
+   <children>
+      <Label fx:id="welcomeLabel" text="Welcome">
+         <style>-fx-font-size: 22px; -fx-font-weight: bold;</style>
+      </Label>
+   </children>
+</StackPane>
