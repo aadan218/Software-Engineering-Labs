@@ -1,6 +1,6 @@
 # Software-Engineering-Labs
 
-מעבדה 1 – הנדסת תוכנה
+מעבדה 2 – הנדסת תוכנה
 
 מגישים:
 עדן עווד 324302678
@@ -8,26 +8,41 @@
 
 
 
-הסבר על מימוש התוכנית
-מטרת התוכנית היא לקרוא נתוני משתמשים, לבדוק את תקינות שם המשתמש והסיסמה, לשמור את המשתמשים התקינים ולהציג אותם בסדר ממוין.
-התוכנית נכתבה בשפת Java ומורכבת משתי מחלקות עיקריות:
-המחלקה  User .1
-מחלקה זו מייצגת משתמש במערכת ומכילה את שם המשתמש והסיסמה שלו.
-•	בנאי (Constructor): מקבל שם משתמש וסיסמה ובודק את תקינותם לפני יצירת האובייקט.
-•	בדיקת שם משתמש: מתבצעת באמצעות ביטוי רגולרי (Regular Expression), המאמת שמדובר בכתובת אימייל תקינה שאורכה אינו עולה על 50 תווים.
-•	בדיקת סיסמה: מוודאת שאורך הסיסמה נע בין 8 ל־12 תווים, ושהיא מכילה לפחות אות אחת, ספרה אחת וסימן מיוחד אחד.
-•	טיפול בשגיאות: אם אחד הנתונים אינו תקין, נזרקת חריגה מסוג IllegalArgumentException  עם הודעת שגיאה מתאימה.
-•	Encapsulation: שדות המחלקה מוגדרים כ־private, והגישה אליהם מתבצעת באמצעות מתודות מתאימות.
-המחלקה  UsersApp.2
-זוהי המחלקה הראשית של התוכנית, המכילה את המתודה main.
-•	התוכנית קוראת את נתוני המשתמשים שורה אחר שורה באמצעות Scanner.
-•	כל שורה מפוצלת לשם משתמש ולסיסמה.
-•	עבור כל שורה מתבצע ניסיון ליצור אובייקט מסוג User.
-•	משתמשים תקינים מתווספים לרשימה מסוג ArrayList<User>.
-•	במקרה של נתונים לא תקינים, החריגה נתפסת באמצעות try-catch ומודפסת הודעת שגיאה מתאימה.
-•	בסיום הקריאה, הרשימה ממוינת לפי שם המשתמש באמצעות Collections.sort.
-•	לבסוף, התוכנית מדפיסה את כל המשתמשים התקינים בסדר ממוין.
-עקרונות התכנות שבהם השתמשנו
-במימוש התוכנית נעשה שימוש בתכנות מונחה עצמים (OOP), הסתרת מידע (Encapsulation), ביטויים רגולריים, רשימות דינמיות (ArrayList), טיפול בחריגות (Exception Handling) ומיון נתונים.
-סיכום
-התוכנית מאפשרת לבצע בדיקות תקינות לנתוני משתמשים, לזהות נתונים שגויים ולהציג את המשתמשים התקינים בצורה מסודרת. המימוש מחולק לשתי מחלקות כדי להפריד בין ניהול נתוני המשתמש לבין תהליך קריאת הקלט ועיבודו.
+# Software Engineering Labs
+
+## Lab 2 - JavaFX Login (branch `lab2-javafx`)
+
+Authors: Eden Awad (324302678), Itay Shor (216187922)
+
+A JavaFX login window for the GCM system, built on top of the Lab 1 code.
+
+### What the program does
+1. Reads the input file (`src/main/resources/users.txt`) and builds an
+   `ArrayList<User>` containing only the valid users.
+2. Opens a login window (username, password, login button).
+3. If a matching user exists, the window is replaced with a Welcome screen.
+   Otherwise an error message is shown inside the window (no pop-up).
+4. Closing a window with X ends the program.
+
+### Project structure
+- `User`, `UsersApp` - Lab 1 classes (only a `package` line was added)
+- `UserLoader` - reads the input file, keeps valid users only
+- `App` - JavaFX entry point
+- `controller/LoginController`, `controller/WelcomeController` - screen logic
+- `login.fxml`, `welcome.fxml` - screen layouts
+
+### How to run
+Requirements: JDK 17+ and Maven.
+
+    mvn javafx:run
+
+To use a different input file:
+
+    mvn javafx:run -Djavafx.args="C:\path\to\input.txt"
+
+### Input file format
+One user per line: `email password` (separated by whitespace).
+Invalid lines are reported on the console and skipped.
+
+### Lab 1
+Lab 1 is on the `main` branch.
