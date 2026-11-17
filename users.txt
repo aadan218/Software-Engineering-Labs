@@ -1,0 +1,6 @@
+student@haifa.ac.il Passw0rd!
+admin@gcm.com Admin123!@
+not-an-email Passw0rd!
+short@gcm.com Ab1!
+nosymbol@gcm.com Password123
+only_one_field

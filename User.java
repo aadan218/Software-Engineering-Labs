@@ -1,3 +1,5 @@
+package org.openjfx.lab2;
+
 import java.util.regex.Pattern;
 
 /** A system user with a validated e-mail username and password. */
